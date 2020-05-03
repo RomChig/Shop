@@ -13,7 +13,7 @@ The same page, but for the admin.
 
 Unregistered user can add products to cart, but can't make order.
 
-![](/web/view/images/projectView/actionUnknownUser.png)
+![](/web/view/images/projectView/cartForUnknownUser.png)
 
 Cart for registered user, who already can make order.
 
