@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="MyProj:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyProj_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="MyProj/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="MyProj" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-fileupload-1.4" />
+          <element id="library" level="project" name="commons-io-2.6" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.49" />
+          <element id="library" level="project" name="jstl-1.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

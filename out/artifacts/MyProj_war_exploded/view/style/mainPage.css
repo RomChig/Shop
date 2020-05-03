@@ -1,0 +1,27 @@
+#container-sort, #container-cart {
+    float: left;
+}
+
+#container-sort {
+    width: 20%;
+    height: 15cm;
+    float: left;
+    margin-top: 10%;
+    margin-right: 5px;
+}
+
+#container-cart {
+    width: 75%;
+    margin-top: 5%;
+    float: right;
+}
+
+#select1,#select2,#select3,#select4,#select5{
+    border-radius: 20px;
+}
+
+option {
+    color: white;
+    background-color: black;
+    box-shadow: black;
+}

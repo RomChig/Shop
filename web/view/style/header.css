@@ -1,0 +1,7 @@
+nav {
+    height: 35px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
