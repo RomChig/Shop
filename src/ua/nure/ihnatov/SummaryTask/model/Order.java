@@ -8,10 +8,9 @@ public class Order extends Entity {
     private Status status;
     private Date dateCreated;
 
-    public Order(Double bill, User user, Status status) {
+    public Order(Double bill, User user) {
         this.bill = bill;
         this.user = user;
-        this.status = status;
     }
 
     public Order() {

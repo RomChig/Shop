@@ -31,7 +31,7 @@ public class CreateOrderServlet extends HttpServlet {
             for (Map.Entry<Product, Long> map : cart.getMapProduct().entrySet()) {
                 bill += (map.getKey().getPrice() * map.getValue());
             }
-            Order order = new OrderService().create(new Order(bill, user, new Status(Fields.STATUS_ID_FOR_REGISTERED_ORDERS)));
+            Order order = new OrderService().create(new Order(bill, user));
             boolean isSet = new OrderService().createRelationOrderAndCart(order, cart);
             if (isSet) {
                 resp.sendRedirect(Paths.PATH_TO_MAIN_SERVLET);
