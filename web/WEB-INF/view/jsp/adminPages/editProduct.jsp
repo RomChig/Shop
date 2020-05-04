@@ -17,11 +17,11 @@
         <form action="/Edit" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="text-white" for="name">Name:</label><br>
-                <input class="form-control" type="text" name="name" id=name value="${product.name}" required><br>
+                <input class="form-control" type="text" name="name" id=name value="${product.name}" required pattern=^[A-Za-z\s]{3,20}$><br>
             </div>
             <div class="form-group">
                 <label class="text-white" for="type">Type:</label><br>
-                <input class="form-control" type="text" name="type" id="type" value="${product.type}" required><br>
+                <input class="form-control" type="text" name="type" id="type" value="${product.type}" required pattern=^[A-Za-z\s]{3,20}$><br>
             </div>
             <div class="form-group">
                 <label class="text-white" for="price">Price</label><br>

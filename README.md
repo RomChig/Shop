@@ -20,11 +20,8 @@ The same page, but for the admin.
 ### Edit product
 ![](/web/view/images/projectView/editProduct.png)
 
-### Log in
-![](/web/view/images/projectView/authorization.png)
-
-### Register
-![](/web/view/images/projectView/registration.png)
+### Log in and register
+![](/web/view/images/projectView/authorization.png)![](/web/view/images/projectView/registration.png)
 
 ### Cart
 Unregistered user can add products to cart, but can't make order.
