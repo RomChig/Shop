@@ -3,6 +3,7 @@ package ua.nure.ihnatov.SummaryTask.controller.servlets.userServlets.identity;
 import ua.nure.ihnatov.SummaryTask.controller.dao.exception.DAOException;
 import ua.nure.ihnatov.SummaryTask.controller.services.UserService;
 import ua.nure.ihnatov.SummaryTask.controller.utility.Fields;
+import ua.nure.ihnatov.SummaryTask.controller.utility.Messages;
 import ua.nure.ihnatov.SummaryTask.controller.utility.Paths;
 import ua.nure.ihnatov.SummaryTask.model.User;
 
@@ -22,8 +23,13 @@ public class AuthorizationServlet extends HttpServlet {
         User user;
         try {
             user = new UserService().checkUser(new User(login, password));
-            setUser(request, user);
-            response.sendRedirect(Paths.PATH_TO_MAIN_SERVLET);
+            if (!(user == null) && password.equals(user.getPassword())) {
+                setUser(request, user);
+                response.sendRedirect(Paths.PATH_TO_MAIN_SERVLET);
+            } else {
+                request.setAttribute("errorNotFoundUser", Messages.ERROR_NOT_FOUND_USER);
+                request.getRequestDispatcher(Paths.PATH_TO_ERROR_JSP).forward(request, response);
+            }
         } catch (DAOException e) {
             throw new ServletException();
         }

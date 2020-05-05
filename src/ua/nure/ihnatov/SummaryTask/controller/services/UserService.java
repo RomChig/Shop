@@ -33,7 +33,7 @@ public class UserService implements UserDAO {
             authorisationPrepareStatement.setString(k, user.getPassword());
             resultSet = authorisationPrepareStatement.executeQuery();
             if (resultSet.next()) {
-                return extractUser(resultSet, user);
+                 return extractUser(resultSet, user);
             }
         } catch (SQLException e) {
             throw new DAOException();

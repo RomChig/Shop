@@ -15,9 +15,10 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
-@WebServlet("/SortOrder")
-public class SortOrderServlet extends HttpServlet {
+@WebServlet("/SortOrders")
+public class SortOrdersServlet extends HttpServlet {
     private static final String LIST_OF_ORDERS = "orderList";
 
     @Override
@@ -26,27 +27,18 @@ public class SortOrderServlet extends HttpServlet {
         Date dateTo = Date.valueOf(req.getParameter("dateTo"));
         try {
             List<Order> orderList = new OrderService().getAll();
-            List<Order> newOrderList = new ArrayList<>();
-            for (Order o : orderList) {
-//                if (((o.getDateCreated().equals(dateFrom) || o.getDateCreated().equals(dateTo))) | (o.getDateCreated().after(dateFrom) && (o.getDateCreated().before(dateTo)))) {
-//                    newOrderList.add(o);
-//                }
-                if (o.getDateCreated().after(dateFrom) && o.getDateCreated().before(dateTo)) {
-                    newOrderList.add(o);
-                } else if (o.getDateCreated().equals(dateFrom)) {
-                    newOrderList.add(o);
-                }
-            }
-//            newOrderList.sort(Comparator.comparing(Order::getDateCreated));
+            List<Order> newOrderList;
+            newOrderList = orderList.stream()
+                    .filter(x -> (x.getDateCreated().after(dateFrom) && x.getDateCreated().before(dateTo)) || (dateTo.toString().equals(x.getDateCreated().toString())))
+                    .collect(Collectors.toList());
             Collections.reverse(newOrderList);
             orderList = newOrderList;
             req.getSession(false).setAttribute(LIST_OF_ORDERS, orderList);
-            resp.sendRedirect("/SortOrder");
+            resp.sendRedirect(Paths.PATH_TO_SORT_ORDERS_SERVLET);
         } catch (
                 DAOException e) {
-            e.printStackTrace();
+            throw new ServletException();
         }
-
     }
 
     @Override

@@ -17,16 +17,21 @@
         <form action="/Edit" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="text-white" for="name">Name:</label><br>
-                <input class="form-control" type="text" name="name" id=name value="${product.name}" required pattern=^[A-Za-z\s]{3,20}$><br>
+                <input class="form-control" type="text" name="name" id=name value="${product.name}"
+                       pattern="^(([A-Za-zА-Яа-яЁё])(\s*\d*\s*\d*)){3,30}$"
+                       required><br>
             </div>
             <div class="form-group">
                 <label class="text-white" for="type">Type:</label><br>
-                <input class="form-control" type="text" name="type" id="type" value="${product.type}" required pattern=^[A-Za-z\s]{3,20}$><br>
+                <input class="form-control" type="text" name="type" id="type" value="${product.type}"
+                       pattern="^(([A-Za-zА-Яа-яЁё])(\s*\d*\s*\d*)){3,30}$"
+                       required><br>
             </div>
             <div class="form-group">
                 <label class="text-white" for="price">Price</label><br>
-                <input class="form-control" type="text" name="price" id="price" value="${product.price}" required
-                       pattern=\d+\.\d{2}><br>
+                <input class="form-control" type="text" name="price" id="price" value="${product.price}"
+                       pattern="\d+\.\d{2}"
+                       required><br>
             </div>
             <div id="centerForm">
                 <div class="form-group">

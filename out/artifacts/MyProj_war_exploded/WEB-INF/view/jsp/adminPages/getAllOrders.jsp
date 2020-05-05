@@ -55,13 +55,13 @@
             </tbody>
         </c:forEach>
     </table>
-    <form action="/SortOrder" method="post">
-        <label for="dateFrom" class="text-white">From date</label>
-        <input class="form-control" type="date" name="dateFrom" id="dateFrom" required>
-        <label for="dateTo" class="text-white">To date</label>
-        <input class="form-control" type="date" name="dateTo" id="dateTo" required>
-        <input type="submit" class="btn btn-success" value="Send">
-    </form>
+        <form action="/SortOrders" method="post">
+            <label for="dateFrom" class="text-white">From date</label>
+            <input class="form-control" type="date" name="dateFrom" id="dateFrom" required>
+            <label for="dateTo" class="text-white">To date</label>
+            <input class="form-control" type="date" name="dateTo" id="dateTo" required>
+            <input type="submit" class="btn btn-success" value="Send">
+        </form>
 </div>
 </body>
 </html>

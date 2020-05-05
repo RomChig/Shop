@@ -24,6 +24,9 @@
         <c:when test="${not empty errorUser}">
             <h1>${errorUser}</h1>
         </c:when>
+        <c:when test="${not empty errorNotFoundUser}">
+            <h1>${errorNotFoundUser}</h1>
+        </c:when>
         <c:when test="${not empty errorProduct}">
             <h1>${errorProduct}</h1>
         </c:when>

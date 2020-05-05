@@ -9,6 +9,7 @@ public final class Paths {
     public static final String PATH_TO_SHOW_PRODUCTS_FROM_ORDER_SERVLET = "/OrdersProducts";
     public static final String PATH_TO_SET_STATUS_FOR_ORDER_SERVLET = "/SetStatusForOrder";
     public static final String PATH_TO_SORT_PRODUCTS_SERVLET = "/SortProducts";
+    public static final String PATH_TO_SORT_ORDERS_SERVLET = "/SortOrders";
     public static final String PATH_TO_MAIN_JSP = "/WEB-INF/view/jsp/mainPage.jsp";
     public static final String PATH_TO_SHOW_CART_JSP = "/WEB-INF/view/jsp/userPages/showCart.jsp";
     public static final String PATH_TO_USER_ROOM_JSP = "/WEB-INF/view/jsp/userPages/userRoom.jsp";

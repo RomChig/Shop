@@ -55,7 +55,7 @@
             </tbody>
         </c:forEach>
     </table>
-        <form action="/SortOrder" method="post">
+        <form action="/SortOrders" method="post">
             <label for="dateFrom" class="text-white">From date</label>
             <input class="form-control" type="date" name="dateFrom" id="dateFrom" required>
             <label for="dateTo" class="text-white">To date</label>

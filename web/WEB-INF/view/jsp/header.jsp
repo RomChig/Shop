@@ -72,10 +72,12 @@
                         <div class="form-group">
                             <label class="text-white" for="login">Login:</label>
                             <input type="text" class="form-control" name="login" id="login"
-                                   placeholder="Login" required><br>
+                                   placeholder="Login"
+                                   required><br>
                             <label class="text-white" for="password">Password:</label>
                             <input type="password" class="form-control" name="password" id="password"
-                                   placeholder="Password" required>
+                                   placeholder="Password"
+                                   required>
                         </div>
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
@@ -97,16 +99,24 @@
                         <div class="form-group">
                             <label for="first_name" class="text-white">First Name:</label>
                             <input type="text" name="first_name" class="form-control" id="first_name"
-                                   placeholder="First Name" required pattern="\S+"><br>
+                                   placeholder="First Name"
+                                   pattern="[A-Za-zА-Яа-яёЁ]*"><br>
                             <label for="last_name" class="text-white">Last Name:</label>
                             <input type="text" name="last_name" id="last_name" class="form-control"
-                                   placeholder="Last Name" required pattern="\S+"><br>
+                                   placeholder="Last Name"
+                                   pattern="[A-Za-zА-Яа-яёЁ]*"
+                                   required><br>
                             <label for="login2" class="text-white">Login:</label>
                             <input type="text" name="login" id="login2" class="form-control" placeholder="Login"
-                                   required pattern="\S+"><br>
+                                   pattern="^[A-Za-zА-Яа-яёЁ\d_-]{6,20}$"
+                                   title="Login must contain A-Z|a-z|А-Я|а-я|ё|Ё|_|-|[0-9] 6 till 20 times"
+                                   required><br>
                             <label for="password2" class="text-white">Password:</label>
                             <input type="password" name="password" id="password2" class="form-control"
-                                   placeholder="Password" required pattern="\S+">
+                                   placeholder="Password"
+                                   pattern="((?=.*\d)(?=.*[A-Za-zА-ЯЁа-яё_]).{8,15})"
+                                   title="Password must contain one or more digits and one or more letters, but >8 and <20"
+                                   required>
                         </div>
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
@@ -127,14 +137,19 @@
                 <div class="container-fluid">
                     <form action="/AddProduct" method="post" enctype="multipart/form-data">
                         <label for="name" class="text-white">Name:</label><br>
-                        <input class="form-control" type="text" name="name" id=name placeholder="Name" required><br>
+                        <input class="form-control" type="text" name="name" id=name placeholder="Name"
+                               pattern="^(([A-Za-zА-Яа-яЁё])(\s*\d*\s*\d*)){3,30}$"
+                               required><br>
 
                         <label for="type" class="text-white">Type:</label><br>
-                        <input class="form-control" type="text" name="type" placeholder="Type" id="type" required><br>
+                        <input class="form-control" type="text" name="type" placeholder="Type" id="type"
+                               pattern="^(([A-Za-zА-Яа-яЁё])(\s*\d*\s*\d*)){3,30}$"
+                               required><br>
 
                         <label for="price" class="text-white">Price</label><br>
-                        <input class="form-control" type="text" name="price" placeholder="Price" id="price" required
-                               pattern=\d+\.\d{2}><br>
+                        <input class="form-control" type="text" name="price" placeholder="Price" id="price"
+                               pattern="\d+\.\d{2}"
+                               required><br>
 
                         <label for="capacity" class="text-white">Capacity:</label>
                         <select id="capacity" name="capacity" class="btn btn-outline-info btn-sm bg-light bg-dark">
